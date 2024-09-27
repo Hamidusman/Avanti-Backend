@@ -31,12 +31,12 @@ class Book(viewsets.ModelViewSet):
     lookup_url_kwarg = "id"
     
     def post(self, request, *args, **kwargs):
-        serializer = BookingSerializer(data=request.data)
+        serializer = self.get_serializer_class(data=request.data)
         if serializer.is_valid():
             booking = serializer.save()
             return Response({
-                "message": f"Congratulations! Tier Solitude has been booked in your name ",
-                "total_price": booking.total_price
+                "message": f"Congratulations! Tier {booking.roomtier.title} has been booked in your name.",
+                "total_price": f"N{booking.total_price}"
             }, status=status.HTTP_201_CREATED)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
     
@@ -45,8 +45,6 @@ class Book(viewsets.ModelViewSet):
         serializer = self.get_serializer(book, many = True)
         return Response(serializer.data, status=status.HTTP_201_CREATED)
 
-        serializer = BookingSerializer
-        return Response(serializer.data)
 
 
 
