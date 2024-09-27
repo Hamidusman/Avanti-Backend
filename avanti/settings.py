@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-@n9348i(^(uq1x*3-h!wlxsh0*1b_q1n8b@0yxls*&-^nd5riy
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['avanti.onrender.com', 'localhost', '127.0.0.1']
+ALLOWED_HOSTS = ['avanti.onrender.com', 'avanti-backend.onrender.com', 'localhost', '127.0.0.1']
 
 
 # Application definition
