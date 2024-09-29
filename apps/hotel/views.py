@@ -39,7 +39,7 @@ class Book(viewsets.ModelViewSet):
         if serializer.is_valid():
             booking = serializer.save()
             return Response({
-                "message": f"Congratulations! Tier {booking.roomtier.title} has been booked in your name.",
+                "message": f"Congratulations! Tier {booking.roomtier.title} has been reserved in your name.",
                 "total_price": f"N{booking.total_price}"
             }, status=status.HTTP_201_CREATED)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
