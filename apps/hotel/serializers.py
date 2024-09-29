@@ -1,6 +1,8 @@
 from rest_framework import serializers
-from .models import RoomTier, RoomRating, Booking
+from .models import RoomTier, RoomRating, Amenity, Booking
 from datetime import datetime
+
+
 class HotelSerializers(serializers.ModelSerializer):
     class Meta:
         model = RoomTier
@@ -37,4 +39,9 @@ class BookingSerializer(serializers.ModelSerializer):
 class RatingSerializer(serializers.ModelSerializer):
     class Meta:
         model = RoomRating
+        fields = '__all__'
+
+class AmenitySerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Amenity
         fields = '__all__'
