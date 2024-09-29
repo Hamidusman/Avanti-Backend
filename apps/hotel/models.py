@@ -3,7 +3,7 @@ from django.db import models
 from django.utils.translation import gettext_lazy as _
 # Create your models here.
 
-class Amenities(models.Model):
+class Amenity(models.Model):
     name = models.CharField(max_length=20)
 
     class Meta:
@@ -20,7 +20,7 @@ class RoomTier(models.Model):
     description = models.CharField(max_length = 500, verbose_name = _('Description'))
     available_rooms = models.IntegerField( verbose_name = _('Available Rooms'))
     price = models.IntegerField()
-    Amenities = models.ManyToManyField(Amenities)
+    Amenities = models.ManyToManyField(Amenity)
 
     def __str__(self):
         return self.title
