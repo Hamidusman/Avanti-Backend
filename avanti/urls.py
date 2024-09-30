@@ -24,11 +24,11 @@ from django.urls import path, re_path, include
 
 schema_view = get_schema_view(
    openapi.Info(
-      title="Avanti: Hotel Booking Web App",
-      default_version='v0.68',
-      description="Developed By Hamid",
+      title="Avanti: Hotel Booking API",
+      default_version='v0.74',
+      description="By Hamid",
       terms_of_service="https://www.google.com/policies/terms/",
-      contact=openapi.Contact(email="contact@snippets.local"),
+      contact=openapi.Contact(email="nothamido3@gmail.com"),
       license=openapi.License(name="BSD License"),
    ),
    public=True,
