@@ -34,8 +34,8 @@ class Book(viewsets.ModelViewSet):
     lookup_field = "id"
     lookup_url_kwarg = "id"
     
-    def post(self, request, *args, **kwargs):
-        serializer = self.get_serializer_class(data=request.data)
+    def create(self, request, *args, **kwargs):
+        serializer = self.get_serializer(data=request.data)
         if serializer.is_valid():
             booking = serializer.save()
             return Response({

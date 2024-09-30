@@ -22,7 +22,7 @@ class StatView(viewsets.ViewSet):
         data = {
             'bookings': bookings,
             'total_rooms': total_rooms,
-            'pp': bookings
+            # requires extra data
         }
         
         serializer = StatSerializer(data)
