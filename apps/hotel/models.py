@@ -14,11 +14,6 @@ class Amenity(models.Model):
         return self.name
 
 class RoomTier(models.Model):
-    ROOM_CHOICES = [
-        ('single', 'Single'),
-        ('double', 'Double'),
-        ('suite', 'Suite')
-    ]
     title = models.CharField(max_length= 50)
     room_type = models.CharField( verbose_name = _('Room Type'), max_length=40)
     description = models.TextField()

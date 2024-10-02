@@ -15,7 +15,7 @@ class HotelView(generics.ListCreateAPIView):
     queryset =RoomTier.objects.all()
     serializer_class = HotelSerializers
 
-class HotelDetail(generics.RetrieveUpdateAPIView):
+class HotelDetail(generics.RetrieveUpdateDestroyAPIView):
     lookup_field = "id"
     lookup_url_kwarg = "id"
     queryset = RoomTier.objects.all()
